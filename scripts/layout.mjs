@@ -30,7 +30,7 @@ export function layout({ current, title, content, profile }) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101613">
+  <meta name="theme-color" content="#121316">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="${escape(description)}">
   <meta property="og:title" content="${escape(title)}">
