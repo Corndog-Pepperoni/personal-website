@@ -39,6 +39,8 @@ export function layout({ current, title, content, profile }) {
   <title>${escape(title)}</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  ${current === "Overview" ? '<link rel="stylesheet" href="home.css">' : ""}
+  ${current === "Experience" ? '<link rel="stylesheet" href="toolkit.css">' : ""}
   <script src="site.js" defer></script>
 </head>
 <body>

@@ -1,0 +1,100 @@
+.toolkit-group {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.7fr) minmax(0, 2.3fr);
+  gap: 40px;
+  border-top: 1px solid var(--line);
+  padding-block: 28px;
+}
+.toolkit-group > h3 {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-top: 12px;
+}
+.tech-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.tech-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.tech-mark svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  overflow: visible;
+}
+.tech-mark svg:not(:only-child) {
+  width: 19px;
+  height: 24px;
+}
+.tech-mark svg + svg {
+  color: var(--accent-secondary);
+}
+.tech-item:nth-child(even) .tech-mark {
+  color: var(--accent-secondary);
+}
+.tech-name {
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1150px) {
+  .tech-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 999px) {
+  .toolkit-group {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .toolkit-group > h3 {
+    padding-top: 0;
+  }
+}
+@media (max-width: 700px) {
+  .tech-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tech-item {
+    padding: 16px;
+  }
+}
+@media (max-width: 450px) {
+  .tech-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+@media print {
+  .toolkit-group {
+    gap: 24px;
+    padding-block: 16px;
+    break-inside: avoid;
+  }
+  .tech-item {
+    padding: 8px;
+  }
+}

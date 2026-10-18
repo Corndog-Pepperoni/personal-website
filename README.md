@@ -27,4 +27,4 @@ Push generated pages and assets to `main`. GitHub Pages is configured to publish
 
 The supplied resume and LinkedIn profile were audited on October 18, 2026. The published resume in `assets/` has the phone number permanently redacted; the original is never copied into the repository. Avoid replacing that asset with an unredacted copy. Design decisions and source reconciliation are recorded in `docs/design.md`.
 
-Space Grotesk and Newsreader are self-hosted with their SIL Open Font Licenses in `assets/`. The portrait comes from the existing repository. All schematic artwork is original HTML/CSS/SVG.
+Space Grotesk and Newsreader are self-hosted with their SIL Open Font Licenses in `assets/`. The homepage headshot was supplied directly by Conor; the About portrait is retained from the original repository. Technology marks are local SVGs from Simple Icons and Devicon, with licenses and attribution in `assets/toolkit/`; general concepts use original illustrative symbols. Other artwork is original HTML/CSS/SVG. The charcoal, blue, and pink theme uses no third-party runtime assets.
