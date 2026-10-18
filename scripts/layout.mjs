@@ -25,6 +25,7 @@ export function layout({ current, title, content, profile }) {
     ["recognition.html", "Recognition"],
   ];
   const description = `Conor Pedroche — UC Berkeley computer science student and Regents’ and Chancellor’s Scholar. Explore software projects, research, experience, education, and recognition.`;
+  const pageStyle = { Overview: "home.css", Experience: "toolkit.css" }[current];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -38,9 +39,7 @@ export function layout({ current, title, content, profile }) {
   <meta property="og:type" content="website">
   <title>${escape(title)}</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  ${current === "Overview" ? '<link rel="stylesheet" href="home.css">' : ""}
-  ${current === "Experience" ? '<link rel="stylesheet" href="toolkit.css">' : ""}
+  <link rel="stylesheet" href="styles.css">${pageStyle ? `\n  <link rel="stylesheet" href="${pageStyle}">` : ""}
   <script src="site.js" defer></script>
 </head>
 <body>

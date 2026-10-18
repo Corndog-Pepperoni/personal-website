@@ -1,5 +1,20 @@
 # Verification — October 18, 2026
 
+## Blue/pink and portrait update
+
+- Replaced the green/copper theme throughout the site with neutral charcoal, blue, and pink, including the logo, favicon, diagrams, focus states, buttons, hover colors, and print accents. No former palette values remain in the active CSS, SVG, or template source.
+- Rebuilt the homepage opener as a full-width typographic name spread. The newly supplied headshot is on the right of the introduction below it; the small snapshot portrait is removed. The short bio uses the exact requested software-engineering wording, and About uses the same career direction.
+- Optimized the attached 2758×2758 headshot to a 960×960 WebP (147 KB) without retouching. The original file is untouched.
+- Added 23 SVG graphics covering all 22 toolkit entries. HTML/CSS has both marks. Each graphic has a readable text label; generic concepts use illustrative symbols, and brand sources/licenses are retained locally. All SVG files parse as valid XML.
+- `npm run build` and all seven `npm test` checks pass. The new checks cover complete icon mapping, accessible decorative graphics, and prevention of silently unmapped toolkit additions.
+- All seven pages tested at 320, 768, 1024, and 1440 pixels: 28 checks, zero horizontal overflow or broken images. Browser console: no errors or warnings observed.
+- axe-core: all seven pages pass at 320 and 1440 pixels, for 14 audits with zero reported WCAG A/AA or best-practice violations.
+- Verified the mobile menu opens, Escape closes it and restores focus, Meet Conor navigates to the introduction, Get to know the work opens Experience, and the keyboard-operated skills disclosure reveals all 39 skills.
+- `npm run check:http`: all 18 pages/assets return HTTP 200; the custom missing page returns HTTP 404. Combined payload across all checked resources is approximately 681 KB, including all pages, both portraits, fonts, and the phone-free resume. Logos are inline and make no extra runtime requests.
+- Desktop homepage and toolkit, plus the mobile homepage, visually reviewed. `git diff --check` passes.
+
+## Original launch verification
+
 ## Content
 
 - Resume and authenticated LinkedIn profile read and reconciled.
