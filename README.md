@@ -17,7 +17,7 @@ Open `http://localhost:4173`. Edit `content/profile.json` for resume and LinkedI
 
 ## Verification
 
-`npm test` checks record completeness, semantic page structure, internal links and fragments, project-base-path compatibility, and phone-number exclusion. With the dev server running, open `http://localhost:4173/tests/browser-audit.html?width=1440` for axe-core accessibility checks on every page; repeat with `width=320`. Run the browser walkthrough in `docs/verification.md` for interaction and visual checks.
+`npm test` checks record completeness, semantic page structure, internal links and fragments, project-base-path compatibility, and phone-number exclusion. With the dev server running, `npm run check:http` verifies every public page and asset and the custom 404. Open `http://localhost:4173/tests/browser-audit.html?width=1440` for axe-core accessibility checks on every page; repeat with `width=320`. Run the browser walkthrough in `docs/verification.md` for interaction and visual checks.
 
 ## Publishing
 

@@ -1,4 +1,4 @@
-import { arrow } from '../layout.mjs';
+import { arrow } from "../layout.mjs";
 
 function schematic() {
   return `<div class="system-visual" aria-hidden="true">
