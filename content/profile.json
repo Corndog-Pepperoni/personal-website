@@ -1,0 +1,137 @@
+{
+  "name": "Conor Pedroche",
+  "email": "business.pedroche@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/conor-pedroche/",
+  "github": "https://github.com/Corndog-Pepperoni",
+  "location": "Berkeley, California",
+  "experience": [
+    {
+      "id": "pc-building",
+      "role": "PC Builder / Technical Advisor",
+      "organization": "Self-employed",
+      "date": "Sep 2020 — Aug 2026",
+      "location": "Santa Maria, CA · Hybrid",
+      "label": "Hardware & technical support",
+      "summary": "From a parts list to a dependable daily driver. Custom gaming PCs built around each customer's budget, performance goals, and aesthetic.",
+      "points": [
+        "Designed, built, and optimized custom gaming PCs for 30+ customers, balancing performance, compatibility, power requirements, thermals, and budget.",
+        "Researched and compared CPUs, GPUs, PSUs, cooling systems, and other components using PCPartPicker.",
+        "Diagnosed POST errors, boot loops, overheating, memory instability, driver conflicts, system crashes, freezing, and blue-screen errors through component isolation and stress testing.",
+        "Optimized systems through cable management, cooling solutions, BIOS/UEFI configuration, and software configuration."
+      ],
+      "skills": ["Computer hardware", "Diagnostics", "BIOS/UEFI", "Customer support"]
+    },
+    {
+      "id": "avid",
+      "role": "AVID Tutor",
+      "organization": "AVID · Santa Maria High School",
+      "date": "Aug 2025 — Jun 2026",
+      "location": "Santa Maria, CA · On-site",
+      "label": "Teaching & mentorship",
+      "summary": "Helping students navigate demanding coursework and the next step after high school.",
+      "points": [
+        "Tutored junior AVID students in AP U.S. History, AP English Language and Composition, and Precalculus.",
+        "Mentored students on succeeding in future AP courses: English Literature and Composition, Government, Macroeconomics, Calculus AB, Physics 1, and Environmental Science.",
+        "Guided students through college applications and scholarships, sharing strategies from personal experience.",
+        "Created a comprehensive college and scholarship guide distributed to every AVID teacher at Santa Maria High School for use with future classes."
+      ],
+      "skills": ["Tutoring", "Mentoring", "Academic advising", "Curriculum development"]
+    },
+    {
+      "id": "shpe",
+      "role": "President",
+      "organization": "Society of Hispanic Professional Engineers (SHPE)",
+      "date": "Aug 2025 — Jun 2026",
+      "location": "Santa Maria, CA",
+      "label": "Engineering leadership",
+      "summary": "Making engineering tangible through hands-on projects and a welcoming STEM community.",
+      "points": [
+        "Led monthly STEM meetings and 11 hands-on engineering projects, creating technical presentations, organizing competitive activities, and guiding teams through planning, design, testing, and final builds.",
+        "Recruited and retained 20+ new members through outreach to underrepresented students, building collaboration, technical and critical thinking, and team design skills.",
+        "Collaborated with Cal Poly students to organize STEM workshops and campus visits for local high school students."
+      ],
+      "skills": ["Leadership", "Public speaking", "Project planning", "STEM outreach"]
+    },
+    {
+      "id": "research",
+      "role": "Research Intern",
+      "organization": "UC Santa Barbara · Summer Research Academies",
+      "date": "Jun 2024 — Jul 2024",
+      "location": "Santa Barbara, CA",
+      "label": "Computational social science",
+      "summary": "Investigating how media outlet reputation shapes political bias in online audience reactions.",
+      "points": [
+        "Collected and processed 1,802 Reddit discussion threads, 18,020 comments, and 101 news outlets using the Reddit API, Selenium, and Python, linking sources, threads, and audience responses.",
+        "Automated collection of follower data from X (Twitter) to measure media outlet reputation and integrated it into a structured dataset.",
+        "Applied VADER sentiment analysis, correlation analysis, and multiple linear regression to study media reputation, article tone, political topics, and audience responses.",
+        "Co-authored and presented a research paper at the Capstone Seminar. The analysis found a statistically significant relationship between media reputation and audience political bias, with government policy and elections showing the strongest effects."
+      ],
+      "skills": ["Python", "Selenium", "VADER", "Statistical modeling", "Scientific writing"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "sourcecado",
+      "name": "Sourcecado",
+      "category": "Local-first AI · Desktop application",
+      "headline": "An AI workflow that can pick up where it left off.",
+      "description": "A local-first AI desktop application built with FastAPI, WebSockets, React, TypeScript, Tauri, and SQLite. The engineering focus: recover interrupted work reliably and keep external actions tied to explicit approval.",
+      "stack": ["Python", "TypeScript", "FastAPI", "React", "Tauri", "SQLite", "Docker", "MCP", "WebSockets"],
+      "points": [
+        {"title": "Recover without repeating", "text": "Restores saved responses and resumes eligible interrupted agent runs under their original IDs. Idempotent processing prevents duplicate messages and external actions."},
+        {"title": "Keep approvals meaningful", "text": "Centralized approval validation binds external actions to verified recipients and reviewed message content. Enrichment requests and API entry points preserve authorization."},
+        {"title": "Test the failure paths", "text": "228 pytest and 35 Vitest tests for the Gmail connection feature cover migrations, retries, message attribution, and failure recovery."}
+      ]
+    },
+    {
+      "id": "event-finder",
+      "name": "Campus Event Finder",
+      "category": "Full-stack web · Student utility",
+      "headline": "Less searching. More showing up.",
+      "description": "A full-stack application that helps students discover campus events by date, category, and location, with a Flask REST API and persistent SQLite storage.",
+      "stack": ["Python", "Flask", "SQLite", "HTML/CSS", "pytest", "Git"],
+      "points": [
+        {"title": "Find the right event", "text": "Search and filter campus events by date, category, and location on campus."},
+        {"title": "Build the complete workflow", "text": "Designed REST endpoints for event creation, retrieval, filtering, and deletion, backed by SQLite."},
+        {"title": "Protect the boundaries", "text": "Implemented user authentication and input validation to protect accounts and prevent invalid event submissions. Added pytest unit tests and used Git/GitHub for debugging and feature development."}
+      ]
+    }
+  ],
+  "education": [
+    {"name": "University of California, Berkeley", "study": "B.A. in Computer Science", "date": "2026 — 2030", "note": "Expected May 2030 · Regents’ and Chancellor’s Scholar", "skills": "Python"},
+    {"name": "Allan Hancock College", "study": "Computer Science · Dual enrollment", "date": "Jan 2023 — Jun 2026", "note": "College coursework alongside high school studies.", "skills": "Computer hardware · Java"},
+    {"name": "Santa Maria High School", "study": "Valedictorian · #1 of 733", "date": "Aug 2022 — Jun 2026", "note": "4.6 GPA", "skills": "Computer hardware"},
+    {"name": "UC Santa Barbara", "study": "Summer Research Academies (SRA)", "date": "Jul 2024", "note": "Conducted collaborative research into media reputation and audience political bias.", "skills": "Python"},
+    {"name": "edX", "study": "Harvard CS50x & CS50P", "date": "Apr 2024 — Aug 2026", "note": "Introduction to Computer Science and Introduction to Programming with Python.", "skills": "Python · C"}
+  ],
+  "courses": [
+    {"name": "Advanced Technology and Engineering", "institution": "Santa Maria High School"},
+    {"name": "Foundations of Technology and Engineering", "institution": "Santa Maria High School"},
+    {"name": "Fundamentals of Programming 1", "institution": "Allan Hancock College"},
+    {"name": "Intro to Computing with HTML", "institution": "Allan Hancock College"},
+    {"name": "Introduction to Computer Science", "institution": "edX · Harvard CS50x"},
+    {"name": "Introduction to Programming with Python", "institution": "edX · Harvard CS50P"},
+    {"name": "Networking Essentials", "institution": "Allan Hancock College"},
+    {"name": "PC Care and Upgrade High School Articulation", "institution": "Allan Hancock College"}
+  ],
+  "additionalCoursework": ["Structure and Interpretation of Computer Programs", "Data Structures"],
+  "certifications": [
+    {"name": "OSHA 10-Hour", "issuer": "CareerSafe", "date": "Sep 2023", "url": "https://www.linkedin.com/in/conor-pedroche/overlay/Certifications/1693665860/treasury/"}
+  ],
+  "honors": [
+    {"name": "Valedictorian", "issuer": "Santa Maria High School", "date": "Jun 2026", "description": "Ranked #1 in a graduating class of 733, with a 4.6 GPA.", "links": [
+      {"label": "Santa Maria Times", "url": "https://santamariatimes.com/news/local/education/santa-maria-high-school-sends-grads-into-the-future-with-pomp-circumstance/article_f8b777c5-fe43-44de-8807-8214b620c468.html"},
+      {"label": "Noozhawk", "url": "https://www.noozhawk.com/santa-maria-high-schools-record-breaking-class-of-2026-leaves-lasting-legacy/"},
+      {"label": "KEYT", "url": "https://keyt.com/news/education/2026/06/11/class-of-2026-celebrated-at-three-santa-maria-valley-high-school-graduation-ceremonies/"}
+    ]},
+    {"name": "Regents’ and Chancellor’s Scholar", "issuer": "University of California, Berkeley", "date": "Mar 2026", "description": "Recipient of the UC Berkeley Regents’ and Chancellor’s Scholarship.", "links": [{"label": "Scholarship record on LinkedIn", "url": "https://www.linkedin.com/in/conor-pedroche/overlay/Honor/565137517/treasury/"}]},
+    {"name": "PCPartPicker Featured Build", "issuer": "PCPartPicker · Self-employed", "date": "Sep 2025", "description": "A custom PC build selected as a PCPartPicker Featured Build.", "links": [{"label": "View featured build", "url": "https://pcpartpicker.com/b/FdDqqs"}]},
+    {"name": "Cybersecurity Gold Medalist", "issuer": "SkillsUSA · Allan Hancock College", "date": "Apr 2025", "description": "First place in both the regional and state SkillsUSA Cybersecurity competitions.", "links": [{"label": "Medal records on LinkedIn", "url": "https://www.linkedin.com/in/conor-pedroche/details/honors/"}]}
+  ],
+  "toolkit": [
+    {"name": "Languages", "items": ["Python", "C", "TypeScript", "SQL", "HTML/CSS", "Java"]},
+    {"name": "Frameworks & systems", "items": ["React", "FastAPI", "Flask", "Tauri", "SQLite", "REST APIs", "WebSockets", "MCP"]},
+    {"name": "Tools & analysis", "items": ["Git", "GitHub", "Docker", "VS Code", "pytest", "Vitest", "Selenium", "VADER"]}
+  ],
+  "linkedinSkills": ["Leadership", "Student Leadership", "Academic Advising", "Academic Coaching", "Mentoring", "Communication", "Public Speaking", "Curriculum Development", "Customer Service", "Thermal Management", "Windows", "Performance Tuning", "Optimization", "BIOS", "Cable Management", "Computer Repair", "Computer Hardware Troubleshooting", "Technical Support", "Hardware Diagnostics", "Computer Hardware Assembly", "System Integration", "Application Programming Interfaces (API)", "Research Skills", "Linear Regression", "Data Analysis", "Statistical Modeling", "Data Visualization", "Sentiment Analysis", "Selenium", "Statistical Analysis", "Web Scraping", "Computational Social Science", "Scientific Writing", "Tutoring", "Computer Hardware", "PC building", "Java", "Python (Programming Language)", "C (Programming Language)"]
+}
