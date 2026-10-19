@@ -10,6 +10,8 @@ The personal page uses three editorial hobby rows, with decorative illustrations
 
 Heading font: [Bricolage Grotesque from Google Fonts](https://github.com/google/fonts/tree/main/ofl/bricolagegrotesque), under the SIL Open Font License included in `assets/`. The self-hosted 27,700-byte TTF is a static instance at weight 600, width 100, optical size 72, subset to Latin punctuation and ASCII. Preload it on every page; there are no third-party font requests.
 
+The introduction's “Get to know the work” and “Get to know me” links have equal visual priority: identical outlined styling, equal widths, 48px height, and shared hover/focus states. Keep the work link first in reading order. Show them side by side on desktop and stack equal-width links below 1000px. The top “Explore my work” link remains the page's primary call to action. This follows [Carbon's related-action sizing guidance](https://www.carbondesignsystem.com/building-blocks/core/components/button/guidelines#button-width-in-button-groups), adapted to semantic navigation links.
+
 Reference decisions: [Linear Method](https://linear.app/method) gives a concise chapter index and clear reading hierarchy; [GitHub ReadME](https://github.com/readme) uses an editorial progression from a strong introduction to specific stories. Borrow those structural principles, not their branding or layouts.
 
 ## Content and provenance

@@ -78,12 +78,15 @@
   font-size: 13px;
   line-height: 1.85;
 }
-.introduction-copy > .text-link {
-  margin-top: 20px;
-}
 .introduction-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 24px;
-  gap: 12px 24px;
+  gap: 16px;
+}
+.introduction-actions .button {
+  padding-inline: 16px;
+  gap: 16px;
 }
 .portrait-feature {
   width: min(100%, 400px);
@@ -130,6 +133,9 @@
   }
 }
 @media (max-width: 999px) {
+  .introduction-actions {
+    grid-template-columns: 1fr;
+  }
   .masthead {
     padding-block: 40px 32px;
   }

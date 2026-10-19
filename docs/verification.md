@@ -1,5 +1,11 @@
 # Verification — October 18, 2026
 
+## Equal emphasis for introduction links
+
+- Gave both introduction links the same outlined button style, padding, arrow alignment, hover/focus behavior, and equal-width grid columns. Both are 48px tall. The work link remains first, and the primary “Explore my work” call to action is unchanged.
+- Build and all ten automated tests passed. Real-browser checks at 320, 768, 1024, and 1440px confirmed equal width and height for the two links at every breakpoint, with no horizontal overflow. They stack below 1000px and share a row on desktop.
+- Visually reviewed the introduction and confirmed keyboard Tab moves from the work link to the personal link; Enter opens About. Both remain semantic anchors with their original destinations. `git diff --check` passed.
+
 ## Slimmer balisong reference update
 
 - Replaced only the balisong SVG drawing with a longer, gently curved blade, slimmer parallel handles, circular handle holes, and an upward-right diagonal pose based on the latest user reference. The existing blue/pink outline style and decorative accessibility treatment are retained.
