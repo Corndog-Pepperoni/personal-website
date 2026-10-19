@@ -1,5 +1,10 @@
 # Verification — October 18, 2026
 
+## Slimmer balisong reference update
+
+- Replaced only the balisong SVG drawing with a longer, gently curved blade, slimmer parallel handles, circular handle holes, and an upward-right diagonal pose based on the latest user reference. The existing blue/pink outline style and decorative accessibility treatment are retained.
+- Regenerated the static pages; all ten automated tests passed. Visually reviewed the drawing at its desktop size and checked About at 320, 768, 1024, and 1440 pixels: no horizontal overflow, and the icon remains hidden from assistive technology. No layout, content, or navigation changes were needed.
+
 ## Typography and illustration refinements
 
 - Removed the background, border, chapter number, and caption from each opening illustration. The standalone drawings scale from 208px on desktop to 64px alongside phone titles.
