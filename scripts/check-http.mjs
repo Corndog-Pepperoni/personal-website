@@ -21,5 +21,5 @@ const results = await Promise.all([...paths].map(async path => {
 }));
 const missing = await fetch(new URL('page-that-does-not-exist.html', origin));
 assert.equal(missing.status, 404);
-assert.match(await missing.text(), /This page took/);
+assert.match(await missing.text(), /Page not found/);
 console.log(`${paths.size} pages and assets returned HTTP 200 (${Math.ceil(results.reduce((a, b) => a + b, 0) / 1024)} KB total). Missing page returned the custom HTTP 404.`);

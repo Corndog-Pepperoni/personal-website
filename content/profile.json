@@ -4,6 +4,34 @@
   "linkedin": "https://www.linkedin.com/in/conor-pedroche/",
   "github": "https://github.com/Corndog-Pepperoni",
   "location": "Berkeley, California",
+  "hobbies": [
+    {
+      "id": "balisong-flipping",
+      "name": "Balisong flipping",
+      "illustration": "balisong",
+      "paragraphs": [
+        "I enjoy balisong flipping. A balisong, also called a butterfly knife, has two handles that rotate around the blade. Flipping involves learning tricks and connecting those movements into sequences."
+      ]
+    },
+    {
+      "id": "speedcubing",
+      "name": "Speedcubing",
+      "illustration": "cube",
+      "paragraphs": [
+        "Speedcubing is solving a Rubik’s Cube as quickly as you can. My fastest solve was 13 seconds, though that was a while ago.",
+        "I’ve recently gotten back into it and am practicing to get close to that time again."
+      ],
+      "personalBest": 13
+    },
+    {
+      "id": "basketball",
+      "name": "Basketball",
+      "illustration": "basketball",
+      "paragraphs": [
+        "I also like playing basketball. It’s another way I enjoy spending time away from my desk."
+      ]
+    }
+  ],
   "experience": [
     {
       "id": "pc-building",
@@ -12,7 +40,7 @@
       "date": "Sep 2020 — Aug 2026",
       "location": "Santa Maria, CA · Hybrid",
       "label": "Hardware & technical support",
-      "summary": "From a parts list to a dependable daily driver. Custom gaming PCs built around each customer's budget, performance goals, and aesthetic.",
+      "summary": "Building custom gaming PCs around each customer's budget, performance goals, and preferences.",
       "points": [
         "Designed, built, and optimized custom gaming PCs for 30+ customers, balancing performance, compatibility, power requirements, thermals, and budget.",
         "Researched and compared CPUs, GPUs, PSUs, cooling systems, and other components using PCPartPicker.",
@@ -33,7 +61,7 @@
         "Tutored junior AVID students in AP U.S. History, AP English Language and Composition, and Precalculus.",
         "Mentored students on succeeding in future AP courses: English Literature and Composition, Government, Macroeconomics, Calculus AB, Physics 1, and Environmental Science.",
         "Guided students through college applications and scholarships, sharing strategies from personal experience.",
-        "Created a comprehensive college and scholarship guide distributed to every AVID teacher at Santa Maria High School for use with future classes."
+        "Created a college and scholarship guide distributed to every AVID teacher at Santa Maria High School for use with future classes."
       ],
       "skills": ["Tutoring", "Mentoring", "Academic advising", "Curriculum development"]
     },
@@ -87,7 +115,7 @@
       "id": "event-finder",
       "name": "Campus Event Finder",
       "category": "Full-stack web · Student utility",
-      "headline": "Less searching. More showing up.",
+      "headline": "A campus event search tool for students.",
       "description": "A full-stack application that helps students discover campus events by date, category, and location, with a Flask REST API and persistent SQLite storage.",
       "stack": ["Python", "Flask", "SQLite", "HTML/CSS", "pytest", "Git"],
       "points": [

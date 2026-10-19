@@ -99,3 +99,44 @@ test("contact privacy is preserved throughout all public pages and data", () => 
   assert.match(html, /mailto:business\.pedroche@gmail\.com/);
   assert.match(html, /assets\/Conor-Pedroche-Resume\.pdf/);
 });
+
+test("personal interests and the past speedcubing best are accurately represented", () => {
+  const about = readFileSync("about.html", "utf8");
+  assert.deepEqual(profile.hobbies.map((hobby) => hobby.name), [
+    "Balisong flipping", "Speedcubing", "Basketball",
+  ]);
+  assert.equal(profile.hobbies.find((hobby) => hobby.id === "speedcubing").personalBest, 13);
+  for (const hobby of profile.hobbies) {
+    assert.ok(about.includes(hobby.name));
+    for (const paragraph of hobby.paragraphs) assert.ok(about.includes(paragraph));
+  }
+  assert.match(about, /Past personal best/);
+  assert.match(about, /recently gotten back into it/);
+});
+
+test("the personal page is reachable from every navigation and the overview introduction", () => {
+  for (const page of pages) {
+    const html = readFileSync(page, "utf8");
+    const nav = html.match(/<nav\b[\s\S]*?<\/nav>/)?.[0];
+    assert.match(nav, /href="about.html"/);
+    const current = [...nav.matchAll(/<a href="([^"]+)" aria-current="page"/g)];
+    assert.equal(current.length, page === "404.html" ? 0 : 1, page);
+    if (current.length) assert.equal(current[0][1], page);
+  }
+  const home = readFileSync("index.html", "utf8");
+  assert.match(home, /href="experience.html">Get to know the work/);
+  assert.match(home, /href="about.html">Get to know me/);
+});
+
+test("page headings are plain and the favicon matches the navigation logo", () => {
+  for (const page of pages) {
+    const html = readFileSync(page, "utf8");
+    for (const [, heading] of html.matchAll(/<h[12]\b[^>]*>([\s\S]*?)<\/h[12]>/g)) {
+      assert.doesNotMatch(heading, /<em\b|class="accent|name-dot/);
+    }
+    const favicon = html.match(/<link rel="icon" href="([^"]+)"/)?.[1];
+    const brandIcon = html.match(/class="monogram" src="([^"]+)"/)?.[1];
+    assert.equal(favicon, brandIcon, page);
+    assert.ok(existsSync(favicon), page);
+  }
+});

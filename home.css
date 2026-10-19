@@ -35,12 +35,6 @@
   letter-spacing: -0.07em;
   margin-block: 48px 40px;
 }
-.masthead-name em {
-  letter-spacing: -0.055em;
-}
-.name-dot {
-  color: var(--accent);
-}
 .masthead-baseline {
   display: flex;
   align-items: center;
@@ -86,6 +80,10 @@
 }
 .introduction-copy > .text-link {
   margin-top: 20px;
+}
+.introduction-actions {
+  margin-top: 24px;
+  gap: 12px 24px;
 }
 .portrait-feature {
   width: min(100%, 400px);

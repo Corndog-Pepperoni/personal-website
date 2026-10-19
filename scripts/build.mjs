@@ -39,7 +39,7 @@ const pages = [
     "Honors & Certifications — Conor Pedroche",
     recognition,
   ],
-  ["about.html", "About", "About & Contact — Conor Pedroche", about],
+  ["about.html", "About", "About Me — Conor Pedroche", about],
   ["404.html", "", "Page Not Found — Conor Pedroche", notFound],
 ];
 for (const [file, current, title, render] of pages) {

@@ -10,13 +10,6 @@
   font-weight: 500 700;
   font-display: swap;
 }
-@font-face {
-  font-family: Newsreader;
-  src: url("assets/newsreader-italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
 :root {
   --bg: #121316;
   --surface: #191b20;
@@ -29,7 +22,6 @@
   --border: #393e49;
   --line: #2a2e36;
   --font: "Space", "Segoe UI", sans-serif;
-  --serif: "Newsreader", Georgia, serif;
   --mono: "Cascadia Code", Consolas, monospace;
   --space: 8px;
   --radius: 4px;
@@ -107,12 +99,6 @@ h3 {
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.045em;
-}
-em {
-  font-family: var(--serif);
-  font-weight: 400;
-  color: var(--accent-secondary);
-  letter-spacing: -0.035em;
 }
 p {
   color: var(--muted);
@@ -193,14 +179,9 @@ strong {
   gap: 16px;
 }
 .monogram {
-  font-size: 39px;
-  line-height: 1;
-  letter-spacing: -0.09em;
-  font-weight: 600;
-  color: var(--accent);
-}
-.monogram > span {
-  color: var(--accent-secondary);
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
 }
 .brand-name {
   font-size: 12px;
@@ -224,10 +205,26 @@ strong {
   font-size: 12px;
   min-height: 44px;
   color: var(--muted);
+  transition: color 180ms ease, background-color 180ms ease;
 }
 .main-nav a:hover,
+.main-nav a:focus-visible,
 .main-nav a[aria-current] {
   color: var(--text);
+}
+.main-nav a::before {
+  content: "";
+  position: absolute;
+  inset: 4px -8px;
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 180ms ease;
+}
+.main-nav a:hover::before,
+.main-nav a:focus-visible::before {
+  opacity: 1;
 }
 .main-nav a[aria-current]::after {
   content: "";
@@ -304,6 +301,11 @@ strong {
   color: var(--bg);
   transform: translateY(-2px);
 }
+.button:not(.primary):hover {
+  background: var(--surface);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
 
 .identity-strip {
   display: grid;
@@ -358,8 +360,7 @@ strong {
   margin-bottom: 36px;
 }
 .section-heading h2,
-.index-section h2,
-.about-section h2 {
+.index-section h2 {
   font-size: clamp(34px, 4vw, 48px);
   margin-top: 12px;
 }
@@ -541,9 +542,13 @@ strong {
 .page-intro {
   padding-block: 80px 56px;
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+  align-items: center;
+  gap: 64px;
 }
 .page-intro h1 {
-  font-size: clamp(48px, 6vw, 78px);
+  font-size: clamp(48px, 5.2vw, 72px);
   margin-top: 24px;
   max-width: 950px;
   line-height: 1.08;
@@ -553,6 +558,114 @@ strong {
   font-size: 15px;
   line-height: 1.85;
   margin-top: 28px;
+}
+.page-intro--plain {
+  grid-template-columns: 1fr;
+}
+.chapter-visual {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 24px;
+  min-height: 288px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.chapter-visual-index {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  color: var(--muted);
+  font: 11px var(--mono);
+}
+.chapter-drawing {
+  width: 144px;
+  color: var(--accent);
+}
+.drawing-accent {
+  stroke: var(--accent-secondary);
+}
+.chapter-caption {
+  display: grid;
+  gap: 4px;
+  text-align: center;
+  font-size: 12px;
+}
+.chapter-caption > span:last-child {
+  color: var(--muted);
+  font-size: 11px;
+}
+.hobby-row {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) 176px;
+  align-items: center;
+  gap: 48px;
+  padding-block: 48px;
+  border-top: 1px solid var(--border);
+}
+.hobby-art {
+  padding: 24px;
+  color: var(--accent);
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+.hobby-copy {
+  max-width: 620px;
+}
+.hobby-copy h3 {
+  font-size: 30px;
+  margin-block: 12px 20px;
+}
+.hobby-copy > p:not(.eyebrow) {
+  font-size: 15px;
+  line-height: 1.85;
+}
+.hobby-copy > p + p {
+  margin-top: 12px;
+}
+.hobby-note {
+  border-left: 1px solid var(--border);
+  padding-left: 24px;
+}
+.hobby-note strong {
+  display: grid;
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+.hobby-note strong span {
+  font-size: 14px;
+  letter-spacing: 0;
+  margin-top: 4px;
+}
+.hobby-note p {
+  font-size: 11px;
+  margin-top: 12px;
+}
+.hobby-note p + p {
+  margin-top: 4px;
+}
+.personal-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-block: 1px solid var(--border);
+  padding-block: 40px;
+}
+.personal-contact h2 {
+  font-size: 32px;
+  margin-block: 12px 16px;
+}
+.personal-contact p:not(.eyebrow) {
+  font-size: 14px;
+}
+.personal-contact .button {
+  flex-shrink: 0;
 }
 .record-row {
   display: grid;
@@ -854,7 +967,7 @@ strong {
   width: 80px;
   height: 80px;
   text-align: center;
-  font: italic 42px/1 var(--serif);
+  font: 42px/1 var(--font);
   padding-top: 16px;
   color: var(--graphic);
 }
@@ -989,26 +1102,6 @@ strong {
 .certificate-row > a {
   margin-left: auto;
 }
-.about-section {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 80px;
-  padding-block: 24px 88px;
-}
-.about-portrait {
-  border-radius: var(--radius);
-  filter: saturate(0.7);
-  aspect-ratio: 1;
-  object-fit: cover;
-}
-.about-section > div > p:not(.eyebrow) {
-  font-size: 14px;
-  line-height: 1.9;
-  margin-top: 24px;
-}
-.about-section h2 {
-  margin-bottom: 32px;
-}
 .error-actions {
   display: flex;
   gap: 32px;
@@ -1090,7 +1183,7 @@ strong {
     width: calc(100% - 80px);
   }
   .main-nav {
-    gap: 18px;
+    gap: 16px;
   }
   .nav-number {
     display: none;
@@ -1114,6 +1207,30 @@ strong {
   }
 }
 @media (max-width: 999px) {
+  .page-intro {
+    gap: 32px;
+    grid-template-columns: minmax(0, 1fr) 240px;
+  }
+  .page-intro--plain {
+    grid-template-columns: 1fr;
+  }
+  .page-intro h1 {
+    font-size: 48px;
+  }
+  .chapter-visual {
+    min-height: 256px;
+    padding: 24px 16px;
+  }
+  .hobby-row {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 32px;
+  }
+  .hobby-art {
+    padding: 16px;
+  }
+  .hobby-note {
+    grid-column: 2;
+  }
   .header-inner {
     min-height: 88px;
     flex-wrap: wrap;
@@ -1245,9 +1362,6 @@ strong {
     font-size: 16px;
     gap: 16px;
   }
-  .about-section {
-    gap: 40px;
-  }
   .stat-band > div {
     padding-left: 12px;
   }
@@ -1256,6 +1370,65 @@ strong {
   }
 }
 @media (max-width: 700px) {
+  .page-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .chapter-visual {
+    grid-template-columns: 80px minmax(0, 1fr);
+    min-height: 0;
+    justify-items: start;
+    align-items: center;
+    padding: 20px 24px;
+    gap: 24px;
+  }
+  .chapter-visual-index {
+    display: none;
+  }
+  .chapter-drawing {
+    width: 80px;
+  }
+  .chapter-caption {
+    text-align: left;
+    font-size: 12px;
+  }
+  .hobby-row {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 24px;
+    padding-block: 32px;
+  }
+  .hobby-art {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 56px;
+    padding: 8px;
+  }
+  .hobby-copy > .eyebrow,
+  .hobby-copy h3 {
+    margin-left: 72px;
+  }
+  .hobby-copy h3 {
+    font-size: 26px;
+    margin-block: 12px 24px;
+  }
+  .hobby-copy > p:not(.eyebrow) {
+    font-size: 14px;
+  }
+  .hobby-note strong {
+    font-size: 40px;
+  }
+  .hobby-note {
+    grid-column: 1;
+  }
+  .personal-contact {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    padding-block: 32px;
+  }
   html {
     scroll-padding-top: 96px;
   }
@@ -1267,7 +1440,8 @@ strong {
     gap: 12px;
   }
   .monogram {
-    font-size: 32px;
+    width: 44px;
+    height: 44px;
   }
   .brand {
     gap: 10px;
@@ -1322,8 +1496,7 @@ strong {
     margin-bottom: 28px;
   }
   .section-heading h2,
-  .index-section h2,
-  .about-section h2 {
+  .index-section h2 {
     font-size: 36px;
   }
   .section-heading > .text-link {
@@ -1602,14 +1775,6 @@ strong {
   .certificate-row h3 {
     font-size: 23px;
   }
-  .about-section {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding-block: 0 48px;
-  }
-  .about-portrait {
-    max-width: 360px;
-  }
   .footer-top {
     flex-direction: column;
     align-items: start;
@@ -1711,6 +1876,7 @@ strong {
     transition: none !important;
   }
   .primary:hover,
+  .button:not(.primary):hover,
   .work-preview:hover .event-lines,
   .work-preview:hover .flow-line {
     transform: none;
@@ -1749,6 +1915,8 @@ strong {
   .contact-links > div,
   .footer-bottom > a,
   .preview-art,
+  .chapter-visual,
+  .hobby-art,
   .project-jump {
     display: none !important;
   }
@@ -1758,6 +1926,19 @@ strong {
   }
   .page-intro {
     padding-block: 24px;
+    display: block;
+  }
+  .hobby-row {
+    display: block;
+    padding-block: 24px;
+    break-inside: avoid;
+  }
+  .hobby-copy > .eyebrow,
+  .hobby-copy h3 {
+    margin-left: 0;
+  }
+  .hobby-note {
+    margin-top: 16px;
   }
   .record-row,
   .education-row,
@@ -1795,10 +1976,26 @@ strong {
     padding-block: 12px;
   }
 }
-/* Keep intrinsic image and flex sizes from widening the narrowest layouts. */
-.about-section > * {
-  min-width: 0;
-}
-.about-portrait {
-  width: 100%;
+/* Brief, one-time entrances: content remains readable without JavaScript. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  .site-header,
+  main > *,
+  .site-footer {
+    animation: page-enter 420ms ease-out both;
+  }
+  main > :nth-child(2) { animation-delay: 50ms; }
+  main > :nth-child(3) { animation-delay: 90ms; }
+  main > :nth-child(n + 4),
+  .site-footer { animation-delay: 120ms; }
+  .chapter-drawing {
+    animation: drawing-enter 650ms ease-out both;
+  }
+  @keyframes page-enter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes drawing-enter {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }

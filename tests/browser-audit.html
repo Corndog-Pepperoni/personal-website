@@ -55,6 +55,18 @@
         window.auditResults.push({
           page,
           width,
+          viewportWidth: child.document.documentElement.clientWidth,
+          horizontalOverflow: child.document.documentElement.scrollWidth > child.document.documentElement.clientWidth,
+          brokenImages: [...child.document.images].filter((image) => !image.complete || image.naturalWidth === 0).map((image) => image.getAttribute('src')),
+          heading: child.document.querySelector('h1').textContent.trim(),
+          headingFont: child.getComputedStyle(child.document.querySelector('h1')).fontFamily,
+          headingStyle: child.getComputedStyle(child.document.querySelector('h1')).fontStyle,
+          headingColor: child.getComputedStyle(child.document.querySelector('h1')).color,
+          activePage: child.document.querySelector('.main-nav [aria-current]')?.getAttribute('href') || null,
+          animations: child.document.getAnimations().map((animation) => ({
+            duration: animation.effect.getTiming().duration,
+            iterations: animation.effect.getTiming().iterations,
+          })),
           violations: result.violations.map((v) => ({
             id: v.id,
             impact: v.impact,

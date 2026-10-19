@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Local responsive preview</title>
+    <style>body { margin: 0; background: #121316; } iframe { display: block; border: 0; }</style>
+  </head>
+  <body>
+    <iframe id="preview" title="Portfolio responsive preview"></iframe>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const pages = ['index', 'projects', 'experience', 'education', 'recognition', 'about', '404'];
+      const page = pages.includes(params.get('page')) ? params.get('page') : 'index';
+      const width = Number(params.get('width'));
+      const frame = document.querySelector('iframe');
+      frame.width = [320, 768, 1024, 1440].includes(width) ? width : 1440;
+      frame.height = Number(params.get('height')) || 1000;
+      if (params.get('nojs') === '1') frame.setAttribute('sandbox', 'allow-same-origin');
+      frame.onload = async () => {
+        await frame.contentDocument.fonts.ready;
+        await Promise.all(frame.contentDocument.getAnimations().map((animation) => animation.finished));
+        document.body.dataset.ready = 'true';
+      };
+      frame.src = `../${page}.html`;
+    </script>
+  </body>
+</html>

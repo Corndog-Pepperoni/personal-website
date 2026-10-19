@@ -1,6 +1,6 @@
 # Conor Pedroche — personal portfolio
 
-A dark, editorial portfolio with separate pages for projects, experience, education, and recognition. Published through the repository's existing GitHub Pages configuration.
+A dark, editorial portfolio with separate pages for projects, experience, education, recognition, and personal interests. Published through the repository's existing GitHub Pages configuration.
 
 ## Develop
 
@@ -13,11 +13,11 @@ npm test
 npm run dev
 ```
 
-Open `http://localhost:4173`. Edit `content/profile.json` for resume and LinkedIn content, `scripts/pages/` for page layouts, `scripts/layout.mjs` for shared navigation and metadata, and `styles.css` for the visual system. Run `npm run build` after content or template changes; the generated root HTML files are committed because Pages serves them directly.
+Open `http://localhost:4173`. Edit `content/profile.json` for professional details and hobbies, `scripts/pages/` for page layouts, `scripts/layout.mjs` for shared navigation and metadata, and `styles.css` for the visual system. Original chapter and hobby illustrations are in `scripts/illustrations.mjs`. Run `npm run build` after content or template changes; the generated root HTML files are committed because Pages serves them directly.
 
 ## Verification
 
-`npm test` checks record completeness, semantic page structure, internal links and fragments, project-base-path compatibility, and phone-number exclusion. With the dev server running, `npm run check:http` verifies every public page and asset and the custom 404. Open `http://localhost:4173/tests/browser-audit.html?width=1440` for axe-core accessibility checks on every page; repeat with `width=320`. Run the browser walkthrough in `docs/verification.md` for interaction and visual checks.
+`npm test` checks record completeness, personal-interest content, navigation, plain headings, logo consistency, internal links and fragments, project-base-path compatibility, and phone-number exclusion. With the dev server running, `npm run check:http` verifies every public page and asset and the custom 404. Open `http://localhost:4173/tests/browser-audit.html?width=1440` for axe-core accessibility and layout checks on every page; repeat at 320, 768, and 1024. For visual and interaction checks in a fixed-width iframe, use `http://localhost:4173/tests/preview.html?page=about&width=320`; add `&nojs=1` to test without site JavaScript. Run the browser walkthrough in `docs/verification.md` for interaction and visual checks.
 
 ## Publishing
 
@@ -27,4 +27,4 @@ Push generated pages and assets to `main`. GitHub Pages is configured to publish
 
 The supplied resume and LinkedIn profile were audited on October 18, 2026. The published resume in `assets/` has the phone number permanently redacted; the original is never copied into the repository. Avoid replacing that asset with an unredacted copy. Design decisions and source reconciliation are recorded in `docs/design.md`.
 
-Space Grotesk and Newsreader are self-hosted with their SIL Open Font Licenses in `assets/`. The homepage headshot was supplied directly by Conor; the About portrait is retained from the original repository. Technology marks are local SVGs from Simple Icons and Devicon, with licenses and attribution in `assets/toolkit/`; general concepts use original illustrative symbols. Other artwork is original HTML/CSS/SVG. The charcoal, blue, and pink theme uses no third-party runtime assets.
+Space Grotesk is self-hosted with its SIL Open Font License in `assets/`. The shared navigation logo and favicon use SVG paths derived from that font; no font download is needed to display the icon. The homepage headshot was supplied directly by Conor. Technology marks are local SVGs from Simple Icons and Devicon, with licenses and attribution in `assets/toolkit/`; chapter and hobby illustrations are original SVGs. The charcoal, blue, and pink theme uses no third-party runtime assets. Headings use plain, white type; motion is brief and honors reduced-motion preferences.
