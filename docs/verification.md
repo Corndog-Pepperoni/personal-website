@@ -1,5 +1,9 @@
 # Verification — October 18, 2026
 
+## Restore the white overview title
+
+- Restored the overview name to the site's existing `--text` white (`#edf0f5`), scoped to `.masthead-name`. The current typeface, wording, layout, and equal-emphasis introduction links are retained. The code diff is one CSS color declaration; `git diff --check` passed.
+
 ## Pink overview title
 
 - Set the overview name to the site's existing `--accent-secondary` pink. Browser-computed color is `rgb(241, 175, 209)`; all interior page titles retain `rgb(198, 220, 247)`. The typeface, wording, and layout are unchanged.
