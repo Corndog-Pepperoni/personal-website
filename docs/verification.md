@@ -1,5 +1,14 @@
 # Verification — October 18, 2026
 
+## Typography and illustration refinements
+
+- Removed the background, border, chapter number, and caption from each opening illustration. The standalone drawings scale from 208px on desktop to 64px alongside phone titles.
+- Page titles now use Bricolage Grotesque semibold in muted ice blue. All title wording is unchanged; body text, navigation, and secondary headings retain the existing typeface. The heading font is a self-hosted 27,700-byte static subset, preloaded on each page, with its SIL Open Font License retained.
+- Redrew the balisong icon from the user's supplied photo reference: an open, angled blade with two parallel handles, pivots, and cutouts. It remains original blue/pink SVG line art; the photograph and its branding are not published.
+- Build and all ten automated tests passed. All seven pages passed real-browser layout and axe-core checks at 320, 768, 1024, and 1440 pixels: 28 audits, zero accessibility violations, horizontal overflow, or broken images. The new heading family was confirmed in the computed styles on every page. Audit output is saved locally in ignored `tmp/header-refinement-audits.json`.
+- Visually reviewed the overview at 1440px, the full personal page at 1024px, and long headings and personal content at 320px. Keyboard-operated mobile navigation to About passed. Page titles and decorative graphics retain their semantic/accessibility behavior.
+- Local HTTP verification passed for all 17 pages/assets (approximately 547 KB total), including the new font and custom 404. Existing reduced-motion and print behavior is preserved; print titles use dark ink. `git diff --check` passed.
+
 ## Personal interests and simpler page openings
 
 - Added balisong flipping, speedcubing, and basketball to About, with an explanation of balisong flipping for unfamiliar readers. The 13-second solve is explicitly a past personal best, with the recent return to practice described separately. Personal facts come only from the user's account; no additional hobbies or competitive history were invented.

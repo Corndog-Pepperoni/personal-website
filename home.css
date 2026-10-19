@@ -32,7 +32,7 @@
   gap: 32px;
   font-size: clamp(72px, 11.5vw, 160px);
   line-height: 1.08;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.06em;
   margin-block: 48px 40px;
 }
 .masthead-baseline {

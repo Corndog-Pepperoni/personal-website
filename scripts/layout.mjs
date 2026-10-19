@@ -44,6 +44,7 @@ export function layout({ current, title, content, profile }) {
   <meta property="og:type" content="website">
   <title>${escape(title)}</title>
   <link rel="icon" href="assets/cp-monogram.svg" type="image/svg+xml" sizes="any">
+  <link rel="preload" href="assets/bricolage-grotesque-semibold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">${pageStyle ? `\n  <link rel="stylesheet" href="${pageStyle}">` : ""}
   <script src="site.js" defer></script>
 </head>
