@@ -1,5 +1,10 @@
 # Verification — October 18, 2026
 
+## Pink overview title
+
+- Set the overview name to the site's existing `--accent-secondary` pink. Browser-computed color is `rgb(241, 175, 209)`; all interior page titles retain `rgb(198, 220, 247)`. The typeface, wording, and layout are unchanged.
+- Visually reviewed the desktop overview. All seven pages passed axe-core WCAG A/AA and best-practice checks at 1440px, including the updated title contrast, with zero violations.
+
 ## Equal emphasis for introduction links
 
 - Gave both introduction links the same outlined button style, padding, arrow alignment, hover/focus behavior, and equal-width grid columns. Both are 48px tall. The work link remains first, and the primary “Explore my work” call to action is unchanged.
