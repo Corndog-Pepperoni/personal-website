@@ -1,5 +1,19 @@
 # Verification — October 18, 2026
 
+## Personal interests and simpler page openings
+
+- Added balisong flipping, speedcubing, and basketball to About, with an explanation of balisong flipping for unfamiliar readers. The 13-second solve is explicitly a past personal best, with the recent return to practice described separately. Personal facts come only from the user's account; no additional hobbies or competitive history were invented.
+- Added About to every main navigation and a “Get to know me” button beside “Get to know the work.” The recognition continuation now leads to About, and About returns to Projects. The existing overview composition and supplied portrait remain in place.
+- Replaced slogan headings and cursive/color emphasis with plain, white Space Grotesk headings. Rephrased promotional introductions and self-descriptive labels while retaining the complete professional record and factual results.
+- Interior openings include original, decorative line illustrations. They become compact horizontal panels on phones. Hobby descriptions span the available phone width; the personal-best aside is clearly labeled.
+- The favicon and navigation use the same cp SVG, exported as paths from the bundled Space Grotesk font. The new asset URL refreshes the browser icon; the old favicon path also contains the updated artwork.
+- Added one-time 420ms page fades, a 650ms illustration entrance with 6px travel, and subtle navigation hover/focus backgrounds. All recorded animations have one iteration. Reduced-motion styles disable animation, transitions, and smooth scrolling; entrance rules apply only to screen media. Reduced-motion and print rules were reviewed in source; this browser connection does not expose native preference/print emulation.
+- `npm run build`: all seven pages generated. `npm test`: all ten checks passed, including new personal-content, navigation, plain-heading, and logo-consistency checks. `git diff --check`: passed.
+- Real browser iframe audits of all seven pages at 320, 768, 1024, and 1440 pixels: 28 checks with zero horizontal overflow, broken images, or axe-core WCAG A/AA/best-practice violations. The iframe preview was used because the browser's viewport override did not change its native viewport. Saved audit details are in ignored `tmp/personal-page-audits.json`.
+- Direct visits to all seven production pages produced no browser console errors or warnings. The accessibility harness logged two MutationObserver errors during frame inspection; direct page checks isolated these from the production pages, whose only script is the existing mobile-menu enhancement.
+- Keyboard checks passed: mobile menu opens; Escape closes it and restores button focus; the personal-page button opens About; project jump links reach their destination; the skills disclosure opens and closes with all 39 entries. With site JavaScript blocked, the main navigation and all personal content remain available, and the skip link focuses the main landmark.
+- Local HTTP check: all 16 public pages/assets returned HTTP 200 (approximately 520 KB combined), and a missing page returned the updated custom HTTP 404. Internal links and resources remain relative for GitHub project Pages. Email and external destinations were inspected without sending messages.
+
 ## Blue/pink and portrait update
 
 - Replaced the green/copper theme throughout the site with neutral charcoal, blue, and pink, including the logo, favicon, diagrams, focus states, buttons, hover colors, and print accents. No former palette values remain in the active CSS, SVG, or template source.
