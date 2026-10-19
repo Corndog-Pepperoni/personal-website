@@ -1,5 +1,10 @@
 # Verification — October 18, 2026
 
+## White page headers
+
+- Set the shared heading token to the existing white text token (`--text`, `#edf0f5`) so every page title matches the overview name. Print retains dark headings. The implementation changes one CSS declaration.
+- All ten existing tests passed. Browser audits of all seven pages at 320, 768, 1024, and 1440px confirmed white titles, zero horizontal overflow, and zero axe-core WCAG A/AA or best-practice violations. Visually reviewed the Projects opening. Audit output is saved in ignored `tmp/white-header-audits.json`; `git diff --check` passed.
+
 ## Restore the white overview title
 
 - Restored the overview name to the site's existing `--text` white (`#edf0f5`), scoped to `.masthead-name`. The current typeface, wording, layout, and equal-emphasis introduction links are retained. The code diff is one CSS color declaration; `git diff --check` passed.

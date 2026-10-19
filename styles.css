@@ -21,7 +21,7 @@
   --surface: #191b20;
   --surface-raised: #22252d;
   --text: #edf0f5;
-  --heading: #c6dcf7;
+  --heading: var(--text);
   --muted: #adb4c2;
   --accent: #99caff;
   --accent-secondary: #f1afd1;
