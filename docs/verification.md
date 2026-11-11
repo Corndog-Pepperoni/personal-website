@@ -1,5 +1,14 @@
 # Verification
 
+## November 11, 2026 project-page follow-up
+
+- Verified that remote `main` at `886cfb8` contains Doodle2Design and the earlier Sourcecado revision. GitHub reports successful Pages build/deployment for that commit. An older visible copy may therefore reflect caching; this diagnosis is not a direct observation of the user's browser.
+- Rewrote all three project descriptions and contribution notes using the supplied resume's facts. Added a compact Doodle2Design results list: second place, 30 design templates, and 50 annotated images. Homepage summaries and technology labels now render from project data rather than duplicated template copy.
+- Replaced the placeholder Doodle2Design artwork with `assets/doodle2design.svg`, an original sketch-to-webpage diagram. Rendered and visually inspected the SVG on the site's surface color; it is decorative, has explicit dimensions, and scales within the preview panel.
+- Regenerated all seven pages and passed all 12 tests, including strengthened checks that the generated Projects page contains every current description and contribution, all three resume projects remain present, and the homepage includes the Doodle2Design artwork and current summaries. Contact values and all seven footer HTML blocks match the previous commit exactly. Heading hierarchy and the 15 screen text/surface contrast combinations pass; minimum calculated ratio 7.36:1. `git diff --check` passes.
+- Live browser, keyboard, and responsive viewport verification remains unavailable in this environment; no new browser or axe-core pass is claimed.
+- Publication attempt: local staging failed because `.git/index.lock` could not be created (permission denied). The connected GitHub fallback rejected tree creation with HTTP 403 (`Resource not accessible by integration`). No remote commit or branch update was made; this follow-up remains local.
+
 ## November 11, 2026 resume and design update
 
 - Updated Berkeley graduation to May 2028; revised Sourcecado, research, PC building, coursework, technical toolkit, and SkillsUSA wording from the current resume. Added Doodle2Design with all three resume accomplishments. Earlier leadership, education, recognition, and personal interests remain available.

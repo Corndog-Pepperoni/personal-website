@@ -833,6 +833,26 @@ strong {
   color: var(--muted);
 }
 /* Project case notes. */
+.project-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-block: 32px;
+  padding-block: 24px;
+  border-block: 1px solid var(--border);
+}
+.project-highlights dt {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.project-highlights dd {
+  margin: 8px 0 0;
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: var(--text);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
 .project-jump {
   display: flex;
   flex-wrap: wrap;

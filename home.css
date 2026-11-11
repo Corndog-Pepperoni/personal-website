@@ -122,43 +122,13 @@
 .portrait-feature figcaption > span:last-child > span {
   color: var(--accent-secondary);
 }
-/* A sketch and a composed page: decorative, rather than a fabricated screenshot. */
-.design-art {
-  flex-direction: row;
-  gap: 24px;
-}
-.sketch-sheet,
-.design-sheet {
-  width: 88px;
-  height: 112px;
-  border: 1px solid var(--accent);
-  padding: 16px 12px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.sketch-sheet {
-  border-style: dashed;
-  transform: rotate(-8deg);
-}
-.design-sheet {
-  border-color: var(--accent-secondary);
-}
-.sketch-sheet span,
-.design-sheet span {
-  grid-column: 1 / -1;
-  border-bottom: 1px solid var(--accent);
-}
-.sketch-sheet i,
-.design-sheet i {
-  border: 1px solid var(--border);
-}
-.sketch-sheet i:last-child,
-.design-sheet i:last-child {
-  grid-column: 1 / -1;
-}
-.design-arrow {
-  color: var(--accent-secondary);
+/* An original sketch-to-webpage diagram, using the existing blue/pink palette. */
+.project-illustration {
+  display: block;
+  width: min(100%, 320px);
+  height: auto;
+  max-height: 100%;
+  padding: 8px 16px;
 }
 @media (max-width: 1150px) {
   .masthead-name {

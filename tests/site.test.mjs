@@ -18,6 +18,7 @@ const pages = [
 const profile = JSON.parse(readFileSync("content/profile.json", "utf8"));
 
 test("the complete professional record is retained", () => {
+  assert.deepEqual(profile.projects.map((project) => project.id), ["sourcecado", "doodle2design", "event-finder"]);
   assert.equal(profile.experience.length, 4);
   assert.equal(profile.education.length, 5);
   assert.equal(profile.courses.length, 8);
@@ -133,8 +134,16 @@ test("project descriptions and diagrams stay with their project when reordered",
     assert.ok(article.includes(`aria-label="${escape(project.architecture.label)}"`), project.id);
     for (const step of project.architecture.steps) assert.ok(article.includes(escape(step)), project.id);
     for (const point of project.points) assert.ok(article.includes(escape(point.text)), project.id);
+    const publishedHtml = readFileSync("projects.html", "utf8");
+    assert.ok(publishedHtml.includes(escape(project.description)), `Generated page has stale copy for ${project.id}`);
+    for (const point of project.points) assert.ok(publishedHtml.includes(escape(point.text)), `Generated page has stale details for ${project.id}`);
   }
-  assert.ok(readFileSync("index.html", "utf8").includes('href="projects.html#doodle2design"'));
+  const overview = readFileSync("index.html", "utf8");
+  assert.ok(overview.includes('href="projects.html#doodle2design"'));
+  assert.match(overview, /src="assets\/doodle2design.svg"[^>]+alt=""/);
+  for (const project of profile.projects.filter((item) => item.preview)) {
+    assert.ok(overview.includes(escape(project.preview)), `Generated overview has stale copy for ${project.id}`);
+  }
 });
 
 test("personal interests and the past speedcubing best are accurately represented", () => {
