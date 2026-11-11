@@ -2,6 +2,9 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
+import { home } from "../scripts/pages/home.mjs";
+import { projects } from "../scripts/pages/record.mjs";
+import { escape } from "../scripts/layout.mjs";
 
 const pages = [
   "index.html",
@@ -87,6 +90,9 @@ test("all detailed record entries are present in their destination pages", () =>
 });
 
 test("contact privacy is preserved throughout all public pages and data", () => {
+  assert.equal(profile.email, "business.pedroche@gmail.com");
+  assert.equal(profile.linkedin, "https://www.linkedin.com/in/conor-pedroche/");
+  assert.equal(profile.github, "https://github.com/Corndog-Pepperoni");
   for (const file of [...pages, "content/profile.json"]) {
     const text = readFileSync(file, "utf8");
     assert.doesNotMatch(
@@ -94,10 +100,41 @@ test("contact privacy is preserved throughout all public pages and data", () => 
       /tel:|\b\d{3}[-. ]\d{3}[-. ]\d{4}\b|conor-pedroche-a16b843a9/i,
       file,
     );
+    for (const [, address] of text.matchAll(/href="mailto:([^"?]+)/g)) {
+      assert.equal(address, profile.email, `${file}: changed email destination`);
+    }
+    if (pages.includes(file)) {
+      assert.ok(text.includes(`href="${profile.linkedin}"`), file);
+      assert.ok(text.includes(`href="${profile.github}"`), file);
+    }
   }
   const html = readFileSync("index.html", "utf8");
   assert.match(html, /mailto:business\.pedroche@gmail\.com/);
   assert.match(html, /assets\/Conor-Pedroche-Resume\.pdf/);
+});
+
+test("graduation follows the profile and the current resume across pages", () => {
+  assert.equal(profile.graduation, "May 2028");
+  for (const page of ["index.html", "education.html"]) {
+    const text = readFileSync(page, "utf8");
+    assert.match(text, /Expected May 2028/);
+    assert.doesNotMatch(text, /2030/);
+  }
+  assert.match(home({ ...profile, graduation: "May 2029" }), /Expected May 2029/);
+});
+
+test("project descriptions and diagrams stay with their project when reordered", () => {
+  const reordered = { ...profile, projects: [...profile.projects].reverse() };
+  const html = projects(reordered);
+  for (const project of reordered.projects) {
+    const article = html.match(new RegExp(`<article[^>]+id="${project.id}"[\\s\\S]*?<\\/article>`))?.[0];
+    assert.ok(article, project.id);
+    assert.ok(article.includes(escape(project.description)), project.id);
+    assert.ok(article.includes(`aria-label="${escape(project.architecture.label)}"`), project.id);
+    for (const step of project.architecture.steps) assert.ok(article.includes(escape(step)), project.id);
+    for (const point of project.points) assert.ok(article.includes(escape(point.text)), project.id);
+  }
+  assert.ok(readFileSync("index.html", "utf8").includes('href="projects.html#doodle2design"'));
 });
 
 test("personal interests and the past speedcubing best are accurately represented", () => {

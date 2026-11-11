@@ -1,5 +1,15 @@
 # Conor Pedroche — personal index
 
+## November 11, 2026 update
+
+The new resume supersedes the October professional-content decisions below where they differ. Expected graduation is May 2028. Sourcecado now emphasizes shared CRM tasks, checkpointed Gmail synchronization, and review of external actions with unknown outcomes. Add Doodle2Design, including its second-place hackathon result, 30 design templates, and 50-image dataset. Retain Campus Event Finder and the established education, leadership, hobbies, and recognition omitted from the shorter resume. Highlight the current resume's technical toolkit and five coursework topics. Remove the older Sourcecado test-count claim and precise research dataset totals from active pages.
+
+Preserve the existing contact values and destinations everywhere, including the downloadable PDF: the business email, LinkedIn, and GitHub remain unchanged, and the phone number remains excluded. The current local copy of `ConorPedrocheResume2028.pdf` was verified against the uploaded resume's complete text and file size. Its body replaces the downloadable resume's body; only the previous public contact strip is retained. Permanently remove the uploaded phone and personal email from the public PDF rather than covering them visually.
+
+Design contract for this update: preserve the existing charcoal, white, blue, and pink editorial identity, self-hosted fonts, portrait, illustrations, chapter navigation, primary Projects action, and equal introduction links. Feature Sourcecado and Doodle2Design on the overview, with all three projects reachable on Projects. Use project-specific diagram data and readable labels; allow project jump links to wrap and diagrams to stack below 1000px. Show relevant coursework as a proper list before earlier course records. Increase short standalone links to 44px touch targets. Keep native anchors, details, keyboard focus, reduced-motion support, and print rules. These choices follow the existing design system; no new external visual reference is needed for this maintenance update.
+
+The current session could not complete live browser QA: the in-app browser timed out on localhost, local HTTP requests were denied by the sandbox, and native browser control stopped because it could not confidently identify the active URL. Source-level review, automated structural checks, and PDF rendering can still be completed. Do not interpret the historical browser audits below as verification of this update.
+
 ## Purpose and visitor paths
 Give a recruiter a useful first impression in 30 seconds, with separate, directly addressable pages for the full record. Overview → projects → experience → education → recognition → about. The overview also links directly to the personal page beside “Get to know the work.” Email, LinkedIn, and a phone-free PDF are always reachable. Keep the existing GitHub Pages hosting and base path.
 

@@ -1,4 +1,17 @@
-# Verification — October 18, 2026
+# Verification
+
+## November 11, 2026 resume and design update
+
+- Updated Berkeley graduation to May 2028; revised Sourcecado, research, PC building, coursework, technical toolkit, and SkillsUSA wording from the current resume. Added Doodle2Design with all three resume accomplishments. Earlier leadership, education, recognition, and personal interests remain available.
+- The overview features Sourcecado and Doodle2Design. Each project now carries its own diagram labels and steps, so reordering projects cannot attach the wrong architecture to a project. Added a local decorative JavaScript mark and attribution.
+- Reviewed all page templates and shared styles against the existing design contract. Project links wrap, diagrams stack below 1000px, project columns can shrink, relevant coursework has list semantics, and standalone links use 44px targets. Existing heading typography, palette, focus indicators, native disclosure, reduced-motion rules, and print styles remain in place.
+- `npm run build`: all seven pages generated. `npm test`: all 12 checks passed, including contact-destination preservation, data-driven graduation, and project diagrams after reordering. `git diff --check`: passed.
+- An additional source audit confirmed all contact values and all seven footer HTML blocks match the previous revision exactly. Heading levels do not skip, and all 15 combinations of the five screen text colors with the three screen surfaces exceed WCAG AA normal-text contrast; the lowest calculated ratio is 7.36:1. This token check is not a replacement for a rendered accessibility audit.
+- The new public PDF has one page and an unchanged resume body from Education onward. The previous public contact strip and exact link destinations are retained. Phone and personal email are permanently redacted, the file is saved with garbage collection, and the result is reopened and rendered for visual review. No clipping or overlapping text observed in the final page image.
+- Live browser and HTTP QA remain incomplete in this session. The in-app browser timed out on localhost; native browser automation stopped because it could not confidently determine the current URL; `npm run check:http` failed with sandbox `EACCES` on both loopback addresses. No new axe-core, viewport, keyboard, print-preview, or browser-console pass is claimed. Run the existing browser audit at 320, 768, 1024, and 1440px when local browser access is available.
+- Publishing uses the existing `main`-branch GitHub Pages deployment. Live visual and interaction checks remain outstanding as described above.
+
+## October 18, 2026 historical verification
 
 ## White page headers
 

@@ -5,6 +5,7 @@ const icons = {
   Python: ["python"],
   C: ["c"],
   TypeScript: ["typescript"],
+  JavaScript: ["javascript"],
   SQL: ["sql"],
   "HTML/CSS": ["html5", "css"],
   Java: ["java"],
